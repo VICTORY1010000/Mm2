@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mature’s Trade | Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header Hero -->
+  <header class="bg-blue-800 p-6 text-center">
+    <h1 class="text-4xl font-bold text-white">Welcome to Mature’s Trade</h1>
+    <p class="text-blue-200 mt-2">Master your trades with real-time data, portfolio insights, and professional tools.</p>
+  </header>
+
+  <!-- Tabs Navigation -->
+  <nav class="bg-gray-800 px-6 py-4 flex justify-center space-x-6 sticky top-0 z-10">
+    <button onclick="switchTab('market')" class="tab-btn text-blue-300 hover:text-green-400">Market</button>
+    <button onclick="switchTab('portfolio')" class="tab-btn text-blue-300 hover:text-green-400">Portfolio</button>
+    <button onclick="switchTab('trade')" class="tab-btn text-blue-300 hover:text-green-400">Trade</button>
+    <button onclick="switchTab('plans')" class="tab-btn text-blue-300 hover:text-green-400">Plans</button>
+    <button onclick="switchTab('news')" class="tab-btn text-blue-300 hover:text-green-400">News</button>
+    <button onclick="switchTab('account')" class="tab-btn text-blue-300 hover:text-green-400">Account</button>
+  </nav>
+
+  <main class="p-6 space-y-10">
+
+    <!-- Market Tab -->
+    <section id="market" class="tab-content active space-y-4">
+      <h2 class="text-2xl text-blue-300 mb-2">Live Market</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-800 p-4 rounded">
+          <h3>BTC/USD</h3>
+          <p id="btc-price" class="text-3xl text-green-400">$--</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded">
+          <h3>ETH/USD</h3>
+          <p id="eth-price" class="text-3xl text-green-400">$--</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded">
+          <h3>Live Chart (BTC)</h3>
+          <canvas id="priceChart" height="150"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Tab -->
+    <section id="portfolio" class="tab-content space-y-4">
+      <h2 class="text-2xl text-blue-300">Your Portfolio</h2>
+      <div class="bg-gray-800 p-6 rounded space-y-3">
+        <div class="flex justify-between"><span>Bitcoin</span><span>0.75 BTC</span></div>
+        <div class="flex justify-between"><span>Ethereum</span><span>2.1 ETH</span></div>
+        <div class="flex justify-between"><span>USDT</span><span>1,200 USDT</span></div>
+      </div>
+    </section>
+
+    <!-- Trade Tab -->
+    <section id="trade" class="tab-content space-y-4">
+      <h2 class="text-2xl text-blue-300">Place a Trade</h2>
+      <form class="bg-gray-800 p-6 rounded grid gap-4 max-w-md">
+        <input type="text" placeholder="Asset (e.g., BTC)" class="p-2 rounded bg-gray-700"/>
+        <input type="number" placeholder="Amount" class="p-2 rounded bg-gray-700"/>
+        <button class="bg-green-600 hover:bg-green-700 py-2 rounded">Execute Trade</button>
+      </form>
+    </section>
+
+    <!-- Plans Tab (Inspired by LuckyManeFX) -->
+    <section id="plans" class="tab-content space-y-4">
+      <h2 class="text-2xl text-blue-300">Services & Plans</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-800 p-6 rounded">
+          <h3 class="font-bold text-lg">Starter Plan</h3>
+          <p>Min Deposit: $500</p>
+          <ul class="list-disc list-inside">
+            <li>Basic signals</li>
+            <li>Email support</li>
+          </ul>
+          <button class="mt-4 bg-blue-600 hover:bg-blue-700 py-2 rounded w-full">Subscribe</button>
+        </div>
+        <div class="bg-gray-800 p-6 rounded">
+          <h3 class="font-bold text-lg">Pro Plan</h3>
+          <p>Min Deposit: $2,000</p>
+          <ul class="list-disc list-inside">
+            <li>Advanced signals</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="mt-4 bg-green-600 hover:bg-green-700 py-2 rounded w-full">Subscribe</button>
+        </div>
+        <div class="bg-gray-800 p-6 rounded">
+          <h3 class="font-bold text-lg">Elite Plan</h3>
+          <p>Min Deposit: $5,000</p>
+          <ul class="list-disc list-inside">
+            <li>Managed account</li>
+            <li>Dedicated mentor</li>
+          </ul>
+          <button class="mt-4 bg-indigo-600 hover:bg-indigo-700 py-2 rounded w-full">Subscribe</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Tab -->
+    <section id="news" class="tab-content space-y-4">
+      <h2 class="text-2xl text-blue-300">Latest News</h2>
+      <div class="space-y-4">
+        <article class="bg-gray-800 p-4 rounded">
+          <h3 class="font-semibold">📉 Crypto markets dip after regulation talk</h3>
+          <p class="text-gray-300">Markets experienced a minor pullback amid renewed regulatory concerns...</p>
+        </article>
+        <article class="bg-gray-800 p-4 rounded">
+          <h3 class="font-semibold">🔥 Altcoins rally on new DeFi protocol</h3>
+          <p class="text-gray-300">New decentralized finance project is attracting massive inflows...</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Account Tab -->
+    <section id="account" class="tab-content space-y-4">
+      <h2 class="text-2xl text-blue-300">Account Settings</h2>
+      <div class="bg-gray-800 p-6 rounded space-y-2">
+        <p><strong>Username:</strong> <span id="acc-username">--</span></p>
+        <p><strong>Email:</strong> <span id="acc-email">--</span></p>
+        <button onclick="logout()" class="mt-4 bg-red-600 hover:bg-red-700 py-2 rounded">Logout</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript Initialization -->
+  <script>
+    // Tab switching
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-content').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(tab).classList.add('active');
+    }
+
+    // User check + display
+    const user = JSON.parse(localStorage.getItem('mature_user'));
+    if(!user) {
+      alert('Not logged in — Redirecting...');
+      window.location.href = 'login.html';
+    } else {
+      document.getElementById('acc-username').textContent = user.username;
+      document.getElementById('acc-email').textContent = user.email;
+    }
+
+    function logout() {
+      localStorage.removeItem('mature_user');
+      window.location.href = 'login.html';
+    }
+
+    // Price updates
+    function updatePrices() {
+      const btc = (70000 + Math.random() * 1000).toFixed(2);
+      const eth = (3800 + Math.random() * 200).toFixed(2);
+      document.getElementById('btc-price').innerText = '$' + btc;
+      document.getElementById('eth-price').innerText = '$' + eth;
+      addData(priceChart, new Date().toLocaleTimeString(), btc);
+    }
+
+    setInterval(updatePrices, 3000);
+
+    const ctx = document.getElementById('priceChart').getContext('2d');
+    const priceChart = new Chart(ctx, {
+      type: 'line',
+      data: { labels: [], datasets:[{ label:'BTC/USD',data:[],borderColor:'rgb(34,197,94)',fill:false, tension:0.1 }] },
+      options: {
+        plugins:{ legend:{ labels:{ color:'white' }}},
+        scales:{ x:{ ticks:{ color:'white' }}, y:{ ticks:{ color:'white'} } }
+      }
+    });
+
+    function addData(chart, label, data) {
+      chart.data.labels.push(label);
+      chart.data.datasets[0].data.push(data);
+      if(chart.data.labels.length>10){
+        chart.data.labels.shift();
+        chart.data.datasets[0].data.shift();
+      }
+      chart.update();
+    }
+
+    // Initial update
+    updatePrices();
+  </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>George Mature’s Trade - Your Trading Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md fixed w-full top-0 z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-blue-900">George Mature’s Trade</div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#home" class="text-gray-600 hover:text-green-900">Home</a>
+        <a href="#about" class="text-gray-600 hover:text-green-900">About</a>
+        <a href="#features" class="text-gray-600 hover:text-green-900">Features</a>
+        <a href="#contact" class="text-gray-600 hover:text-green-900">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-600 focus:outline-none p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden flex-col md:hidden px-4 pb-4">
+      <a href="#home" class="block py-2 text-gray-600 hover:bg-gray-100">Home</a>
+      <a href="#about" class="block py-2 text-gray-600 hover:bg-gray-100">About</a>
+      <a href="#features" class="block py-2 text-gray-600 hover:bg-gray-100">Features</a>
+      <a href="#contact" class="block py-2 text-gray-600 hover:bg-gray-100">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-600 text-white pt-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Trade Smarter with Mature</h1>
+      <p class="text-lg md:text-xl mb-6">Your gateway to seamless, secure, and profitable trading.</p>
+      <a href="login.html" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600">Start Trading Now</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">About Mature’s Trade</h2>
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2">
+          <p class="text-lg text-gray-600 mb-6">
+            Mature’s Trade is a leading platform for trading crypto, forex, and stocks. Our mission is to empower all traders with powerful tools, education, and 24/7 support.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            We offer real-time data, advanced charting, and top-tier security to help you succeed. Join a platform that puts your success first.
+          </p>
+          <a href="#contact" class="inline-block bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600">Contact Us</a>
+        </div>
+        <div class="lg:w-1/2">
+          <img src="https://via.placeholder.com/600x400" alt="Mature’s Trade Platform" class="w-full rounded-lg shadow-lg" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">Why Trade with Mature’s Trade?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature Item -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">Real-Time Market Data</h3>
+          <p class="text-gray-600">Live prices and trends to stay ahead.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">Low Trading Fees</h3>
+          <p class="text-gray-600">Transparent, competitive pricing.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">Bank-Grade Security</h3>
+          <p class="text-gray-600">Trade confidently with encryption and safety.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">Advanced Charting</h3>
+          <p class="text-gray-600">Technical tools for better analysis.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">Mobile Trading</h3>
+          <p class="text-gray-600">Trade anytime on our mobile app.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">24/7 Support</h3>
+          <p class="text-gray-600">Get help whenever you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">Contact Us</h2>
+      <div class="max-w-xl mx-auto">
+        <form id="contact-form">
+          <label class="block mb-2 text-gray-700">Name:</label>
+          <input type="text" id="name" required class="w-full px-4 py-2 border border-gray-300 rounded mb-4">
+
+          <label class="block mb-2 text-gray-700">Email:</label>
+          <input type="email" id="email" required class="w-full px-4 py-2 border border-gray-300 rounded mb-4">
+
+          <label class="block mb-2 text-gray-700">Subject:</label>
+          <input type="text" id="subject" required class="w-full px-4 py-2 border border-gray-300 rounded mb-4">
+
+          <label class="block mb-2 text-gray-700">Message:</label>
+          <textarea id="message" required class="w-full px-4 py-2 border border-gray-300 rounded mb-4 h-32"></textarea>
+
+          <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-6 text-center">
+    <p>© 2025 Mature’s Trade. All rights reserved.</p>
+    <div class="mt-2">
+      <a href="#" class="hover:text-green-400 mx-2">Privacy Policy</a>
+      <a href="#" class="hover:text-green-400 mx-2">Terms of Service</a>
+      <a href="#contact" class="hover:text-green-400 mx-2">Contact</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Contact form handling
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (name && email && subject && message) {
+        alert('Thank you for sending us a message. We would get back to you.');
+        form.reset();
+      } else {
+        alert('Please fill in all fields.');
+      }
+    });
+  </script>
+
+</body>
+</html>
